@@ -31,16 +31,21 @@
       <textarea id="code" placeholder="Insert code here..."></textarea>
       <textarea id="output" placeholder="Output will appear here..." disabled></textarea>
     </div>
-<!-- 
-    <div class="container">
-      <button onclick="runCode();">Generate</button>
-    </div> -->
 
-    <!-- <script>
-        // const codeEl = document.getElementById("code");
-        // const outputEl = document.getElementById("output");
-        // codeEl.value = sample;
-    </script> -->
+    <div class="container">
+      <button id="generate">Generate</button>
+    </div>
+
+    <script>
+        const codeEl = document.getElementById("code");
+        const outputEl = document.getElementById("output");
+        codeEl.value = sample;
+
+        const btn = document.getElementById("generate");
+        btn.addEventListener('click', () => {
+          window.runCode(codeEl.value)
+        }) 
+    </script>
 
     <script type="text/python" src="smartpyio.py"></script>
   </body>
